@@ -1,1 +1,0 @@
-print('\'hello world\' - a quote from user2')
