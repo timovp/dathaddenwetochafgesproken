@@ -1,0 +1,8 @@
+#!/bin/bash
+apt-get update && apt-get install -y python3
+apt-get install -y python3-pip
+apt-get install -y python3-venv
+cd /config/workspace/
+python3 -m venv /config/workspace/.venv
+source /config/workspace/.venv/bin/activate
+pip3 install -r requirements.txt

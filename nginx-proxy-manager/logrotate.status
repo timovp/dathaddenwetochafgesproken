@@ -1,8 +1,0 @@
-logrotate state -- version 2
-"/var/log/acpid.log" 2020-6-19-13:0:0
-"/config/log/nginx/letsencrypt-requests.log" 2020-6-19-14:0:0
-"/config/log/nginx/error.log" 2020-6-19-13:0:0
-"/config/log/nginx/default.log" 2020-6-19-13:0:0
-"/config/log/nginx/proxy_host-1.log" 2020-6-19-14:0:0
-"/config/log/nginx/proxy_host-2.log" 2020-6-19-14:0:0
-"/config/log/nginx/manager.log" 2020-6-19-13:0:0
