@@ -86,7 +86,7 @@ services:
       - "443:4443"
     volumes:
       - "~/docker/nginx-proxy-manager:/config:rw"
-    restart: unless-stopped' > docker-compose.yml
+    restart: unless-stopped' > ~/docker/docker-compose.yml
 #docker-compose up -d --remove-orphans --force-recreate
 
 TOKEN=$(cat ~/token.txt)
