@@ -18,9 +18,9 @@ mkdir /root/docker/code-server-master
 mkdir /root/docker/code-server-$USER1
 mkdir /root/docker/code-server-$USER2
 mkdir /root/docker/nginx-proxy-manager
-mkdir /root/docker/code-server-master/custom-init.d
-mkdir /root/docker/code-server-$USER1/custom-init.d
-mkdir /root/docker/code-server-$USER2/custom-init.d
+mkdir /root/docker/code-server-master/custom-cont-init.d
+mkdir /root/docker/code-server-$USER1/custom-cont-init.d
+mkdir /root/docker/code-server-$USER2/custom-cont-init.d
 
 mkdir /root/docker/code-server-master/workspace/
 mkdir /root/docker/code-server-$USER1/workspace/
