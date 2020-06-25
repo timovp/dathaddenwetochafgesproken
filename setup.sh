@@ -1,26 +1,25 @@
 #!/bin/bash
 # change user/pass here
-USER1 = $(echo 'user1')
-USER2 = $(echo 'user2')
-USER3 = $(echo 'user3')
-USER4 = $(echo 'user4')
-PASS1 = $(echo 'user1')
-PASS2 = $(echo 'user2')
-PASS3 = $(echo 'user3')
-PASS4 = $(echo 'user4')
+USER1=$(echo 'user1')
+USER2=$(echo 'user2')
+USER3=$(echo 'user3')
+USER4=$(echo 'user4')
+PASS1=$(echo 'user1')
+PASS2=$(echo 'user2')
+PASS3=$(echo 'user3')
+PASS4=$(echo 'user4')
 # sudo password to fix stuff on user accounts
-SUDOPASS = $(echo 'sudopass')
+SUDOPASS=$(echo 'sudopass')
 # domain name, registered at digital ocean
-DOMAINNAME = $(echo 'dathaddenwetochafgesproken.nl')
+DOMAINNAME=$(echo 'dathaddenwetochafgesproken.nl')
 
 mkdir ~/docker
 mkdir ~/docker/code-server-master
 mkdir ~/docker/code-server-$USER1
 mkdir ~/docker/code-server-$USER2
 mkdir ~/docker/nginx-proxy-manager
-cp -r nginx-proxy-manager ./nginx-proxy-manager
 mkdir ~/docker/code-server-master/custom-init.d
-mkdir ~/docker/code-server-$USER2/custom-init.d
+mkdir ~/docker/code-server-$USER1/custom-init.d
 mkdir ~/docker/code-server-$USER2/custom-init.d
 
 cp requirements.txt ~/docker/code-server-master/workspace/
