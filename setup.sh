@@ -19,9 +19,10 @@ mkdir ~/docker/code-server-$USER1
 mkdir ~/docker/code-server-$USER2
 mkdir ~/docker/nginx-proxy-manager
 cp -r nginx-proxy-manager ./nginx-proxy-manager
-mkdir mkdir ~/docker/code-server-master/custom-init.d
-mkdir mkdir ~/docker/code-server-$USER1/custom-init.d
-mkdir mkdir ~/docker/code-server-$USER2/custom-init.d
+mkdir ~/docker/code-server-master/custom-init.d
+mkdir ~/docker/code-server-$USER2/custom-init.d
+mkdir ~/docker/code-server-$USER2/custom-init.d
+
 cp requirements.txt ~/docker/code-server-master/workspace/
 cp requirements.txt ~/docker/code-server-$USER1/workspace/
 cp requirements.txt ~/docker/code-server-$USER2/workspace/
@@ -88,7 +89,9 @@ services:
       - "~/docker/nginx-proxy-manager:/config:rw"
     restart: unless-stopped' > ~/docker/docker-compose.yml
 #docker-compose up -d --remove-orphans --force-recreate
-
+cp install_python ~/docker/code-server-master/custom-init.d/
+cp install_python ~/docker/code-server-$USER1/custom-init.d/
+cp install_python ~/docker/code-server-$USER2/custom-init.d/
 TOKEN=$(cat ~/token.txt)
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer "$TOKEN -d '{"type": "CNAME",
   "name": "'$USER1'",
