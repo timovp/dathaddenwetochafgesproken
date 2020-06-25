@@ -22,6 +22,10 @@ mkdir ~/docker/code-server-master/custom-init.d
 mkdir ~/docker/code-server-$USER1/custom-init.d
 mkdir ~/docker/code-server-$USER2/custom-init.d
 
+mkdir ~/docker/code-server-master/workspace/
+mkdir ~/docker/code-server-$USER1/workspace/
+mkdir ~/docker/code-server-$USER2/workspace/
+
 cp requirements.txt ~/docker/code-server-master/workspace/
 cp requirements.txt ~/docker/code-server-$USER1/workspace/
 cp requirements.txt ~/docker/code-server-$USER2/workspace/
