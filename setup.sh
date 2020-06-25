@@ -92,9 +92,9 @@ services:
       - "/root/docker/nginx-proxy-manager:/config:rw"
     restart: unless-stopped' > /root/docker/docker-compose.yml
 docker-compose -f /root/docker/docker-compose.yml up -d --remove-orphans --force-recreate
-cp install_python /root/docker/code-server-master/custom-init.d/
-cp install_python /root/docker/code-server-$USER1/custom-init.d/
-cp install_python /root/docker/code-server-$USER2/custom-init.d/
+cp install_python /root/docker/code-server-master/custom-cont-init.d/
+cp install_python /root/docker/code-server-$USER1/custom-cont-init.d/
+cp install_python /root/docker/code-server-$USER2/custom-cont-init.d/
 docker-compose -f /root/docker/docker-compose.yml restart
 
 TOKEN=$(cat /root/token.txt)
