@@ -58,7 +58,7 @@ services:
       - TZ=Europe/London
       - PASSWORD='$PASS2'
       - SUDO_PASSWORD='$SUDOPASS'
-      - PROXY_DOMAIN=vsuser1.'$DOMAINNAME' #optional
+      - PROXY_DOMAIN='$USER1'.'$DOMAINNAME' #optional
     volumes:
       - ~/docker/code-server-'$USER1':/config
     ports:
@@ -74,7 +74,7 @@ services:
       - TZ=Europe/London
       - PASSWORD='$PASS2'
       - SUDO_PASSWORD='$SUDOPASS'
-      - PROXY_DOMAIN=vsuser2.'$DOMAINNAME' #optional
+      - PROXY_DOMAIN='$USER1'.'$DOMAINNAME' #optional
     volumes:
       - ~/docker/code-server-'$USER2':/config
     ports:
@@ -91,10 +91,12 @@ services:
     volumes:
       - "~/docker/nginx-proxy-manager:/config:rw"
     restart: unless-stopped' > ~/docker/docker-compose.yml
-#docker-compose up -d --remove-orphans --force-recreate
+docker-compose -f ~/docker/docker-compose.yml up -d --remove-orphans --force-recreate
 cp install_python ~/docker/code-server-master/custom-init.d/
 cp install_python ~/docker/code-server-$USER1/custom-init.d/
 cp install_python ~/docker/code-server-$USER2/custom-init.d/
+docker-compose -f ~/docker/docker-compose.yml restart
+
 TOKEN=$(cat ~/token.txt)
 curl -X POST -H "Content-Type: application/json" -H "Authorization: Bearer "$TOKEN -d '{"type": "CNAME",
   "name": "'$USER1'",
